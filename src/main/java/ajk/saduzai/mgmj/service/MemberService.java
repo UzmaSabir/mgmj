@@ -2,7 +2,6 @@ package ajk.saduzai.mgmj.service;
 
 import ajk.saduzai.mgmj.domain.Member;
 import ajk.saduzai.mgmj.repository.MemberRepository;
-import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,7 +20,16 @@ public class MemberService {
         return memberRepository.findAll();
     }
 
-    public Member createMember(Member member) {
+    public Member save(Member member) {
         return memberRepository.save(member);
     }
+
+    public void deleteMember(Long id) {
+        memberRepository.deleteById(id);
+    }
+
+    public Member findMemberById(Long id) {
+        return memberRepository.findById(id).orElseThrow(() -> new RuntimeException("Member not found"));
+    }
+
 }
