@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("/members")
 public class MemberController {
 
     private final MemberService memberService;
@@ -26,6 +27,11 @@ public class MemberController {
     public String test() {
         System.out.println("This is a controller.");
         return "Success";
+    }
+
+    @GetMapping
+    public List<Member> getMembers() {
+        return memberService.getAllMembers();
     }
 
     @GetMapping(path="/getAllMembers")
