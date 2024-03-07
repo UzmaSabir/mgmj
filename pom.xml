@@ -64,11 +64,6 @@
 					<argLine>-XX:+EnableDynamicAgentLoading</argLine>
 				</configuration>
 			</plugin>
-			<!-- <plugin>
-				<groupId>com.github.ferstl</groupId>
-				<artifactId>depgraph-maven-plugin</artifactId>
-				<version>4.0.3</version>
-			</plugin> -->
 		</plugins>
 	</build>
 
