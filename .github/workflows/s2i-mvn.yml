@@ -17,8 +17,6 @@ on:
 jobs:
   build:
     uses: UzmaSabir/actions/.github/workflows/maven-build.yaml@main
-    permissions:
-      contents: write
 
     with:
       java-version: "21"
