@@ -1,6 +1,6 @@
-FROM ghcr.io/tolletaten/build-images/runner-java21:latest
+FROM openjdk:21-jdk
 
-LABEL maintainer=Tolldirektoratet
+LABEL maintainer=UzmaSabir
 ENV TZ="Europe/Oslo"
 ENV JAVA_OPTS=""
 
