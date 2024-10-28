@@ -11,18 +11,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         
-      #- name: Set up JDK
-        #uses: actions/setup-java@8df1039502a15bceb9433410b1a100fbe190c53b # v4.5.0
-        #with:
-          #java-version: 21
-          #distribution: "temurin"
-          #cache: maven
+      - name: Set up JDK
+        uses: actions/setup-java@8df1039502a15bceb9433410b1a100fbe190c53b # v4.5.0
+        with:
+          java-version: 21
+          distribution: "temurin"
+          cache: maven
           
-      #- name: Build
-        #run: mvn -B --no-transfer-progress verify --file pom.xml
-        #env:
-          #GITHUB_ACTOR: ${{ github.actor }}
-          #GITHUB_TOKEN: ${{ secrets.packages-token }}
+      - name: Build
+        run: mvn -B --no-transfer-progress verify --file pom.xml
+        env:
+          GITHUB_ACTOR: ${{ github.actor }}
+          GITHUB_TOKEN: ${{ secrets.packages-token }}
           
       - name: Upload artifact
         uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882 # v4.4.3
