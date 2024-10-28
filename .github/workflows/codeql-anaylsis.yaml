@@ -1,0 +1,14 @@
+name: "Code scanning"
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  scan-code:
+    uses: UzmaSabir/actions/.github/workflows/codeql.yaml@main
+
+    with:
+      java-version: "21"
