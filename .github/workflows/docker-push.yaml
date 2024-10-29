@@ -48,4 +48,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ghcr.io/${{ github.repository_owner }}/app-${{ github.repository | toLowerCase }}:latest
+          tags: ghcr.io/${{ github.repository_owner }}/app-${{ github.repository_lower }}:latest
