@@ -1,4 +1,4 @@
-name: ci
+name: maven-docker-push
 
 on:
   push:
@@ -10,6 +10,9 @@ permissions:
 jobs:
   docker-push:
     uses: UzmaSabir/actions/.github/workflows/maven-docker-push.yaml@main
-    # permissions:
-    #   packages: write
-    #   contents: read
+    permissions:
+      packages: write
+      contents: read
+    with:
+      java-version: "21"
+      image-name: "mjmg"
