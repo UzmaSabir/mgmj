@@ -13,6 +13,3 @@ jobs:
     permissions:
       packages: write
       contents: read
-    with:
-      java-version: "21"
-      image-name: "mjmg"
