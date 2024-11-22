@@ -4,11 +4,13 @@ import ajk.saduzai.mgmj.domain.Task;
 import ajk.saduzai.mgmj.service.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@RequestMapping("/tasks")
 public class TaskController {
 
     private final TaskService taskService;
@@ -55,5 +57,13 @@ public class TaskController {
     @DeleteMapping("/deleteTask/{id}")
     public void deleteTask(@PathVariable Long id) {
         taskService.deleteTask(id);
+    }
+
+    @PutMapping("/{taskId}/assign/{memberId}")
+    public ResponseEntity<Task> assignTaskToMember(
+            @PathVariable Long taskId,
+            @PathVariable Long memberId) {
+        Task updatedTask = taskService.assignTaskToMember(taskId, memberId);
+        return ResponseEntity.ok(updatedTask);
     }
 }
